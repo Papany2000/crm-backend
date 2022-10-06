@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Delete, Param } from '@nestjs/common';
+import { Controller, Get, Post, Body, Delete, Param, Query } from '@nestjs/common';
 import { OrganizationService } from '../services/organization.service';
 import { Organization, OrganizationDTO} from '../schemas/organizanion.schema';
 
@@ -13,13 +13,12 @@ export class OrganizationController {
   }
 
   @Get('/organization')
-  getOrganizations(): Promise<Organization[]> {
-    return this.organizationService.findAll();
+  getOrganizations(@Query() query): Promise<Organization[]> {
+    return this.organizationService.findAll(query);
   }
 
   @Delete('/organization/:id')
   deleteOrganization(@Param('id') id: string): Promise<Organization> {
-    console.log(id)
     return this.organizationService.removeOrganization(id);
   }
   @Get('/organization/:id')

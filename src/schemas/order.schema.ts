@@ -6,10 +6,10 @@ export type OrderDocument = Order & Document;
 @Schema()
 export class Order {
   @Prop()
-  Id: number;
+  Id: string;
 
   @Prop()
-  contractId: number;
+  contractId: string;
 
   @Prop()
   number: string;

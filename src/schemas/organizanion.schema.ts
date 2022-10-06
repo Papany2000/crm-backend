@@ -21,6 +21,9 @@ export class Organization {
   managerWorkPhone: string;
 
   @Prop()
+  managerPersonalPhone: string;
+
+  @Prop()
   managerEmail: string;
 
   @Prop()

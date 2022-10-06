@@ -12,8 +12,8 @@ export class OrderService {
     return createdOrder.save();
   }
 
-  async findAll(): Promise<Order[]> {
-    return this.orderModel.find();
+  async findAll(param): Promise<Order[]> {
+    return this.orderModel.find(param);
   }
 
   async removeOrder(id: number): Promise<Order> {

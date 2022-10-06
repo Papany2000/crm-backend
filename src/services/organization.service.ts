@@ -12,8 +12,10 @@ export class OrganizationService {
     return createdOrganization.save();
   }
 
-  async findAll(): Promise<Organization[]> {
-    return this.organizationModel.find().exec();
+  async findAll(param): Promise<Organization[]> {
+   // const limit = Number(param.limit || 10);
+   // const offset = (Number(param.page || 1)-1)*limit;
+    return this.organizationModel.find(param);
   }
   async removeOrganization(id: string): Promise<Organization> {
     return this.organizationModel.findByIdAndDelete(id)

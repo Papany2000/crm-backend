@@ -6,7 +6,7 @@ export type ContractDocument = Contract & Document;
 @Schema()
 export class Contract {
   @Prop()
-  organizationId: number;
+  organizationId: string;
 
   @Prop()
   number: string;
@@ -21,7 +21,7 @@ export class Contract {
   fileUuid: string;
 }
 export interface ContractDTO {
-  organizationId: number;
+  organizationId: string;
   number: string;
   description: string;
   idescription: boolean;

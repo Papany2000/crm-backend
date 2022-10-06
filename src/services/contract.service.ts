@@ -12,14 +12,14 @@ export class ContractService {
     return createdContract.save();
   }
 
-  async findAll(): Promise<Contract[]> {
-    return this.contractModel.find();
+  async findAll(param): Promise<Contract[]> {
+    return this.contractModel.find(param);
   }
 
-  async removeContract(id: number): Promise<Contract> {
+  async removeContract(id: string): Promise<Contract> {
     return this.contractModel.findByIdAndDelete(id)
   }
-  async getContract(id: number): Promise<Contract> {
-    return this.contractModel.findById(id)
+  async getContract(id: string): Promise<Contract[]> {
+    return this.contractModel.find({organizationId: id})
   }
 }
