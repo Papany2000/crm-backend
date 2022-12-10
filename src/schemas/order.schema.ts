@@ -24,10 +24,10 @@ export class Order {
   supportEmail: string;
 
   @Prop()
-  supprotPhone: string;
+  supportPhone: string;
 
   @Prop()
-  supprotEmialTemplate: string;
+  supportEmailTemplate: string;
 }
 export interface OrderDTO {
   contractId: string;
@@ -35,8 +35,8 @@ export interface OrderDTO {
   description: string;
   type: string;
   supportEmail: string;
-  supprotPhone: string;
-  supprotEmialTemplate: string;
+  supportPhone: string;
+  supportEmailTemplate: string;
 }
 
 export const OrderSchema = SchemaFactory.createForClass(Order);

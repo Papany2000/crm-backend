@@ -30,7 +30,7 @@ export class Organization {
   supportEmail: string;
 
   @Prop()
-  supprotPhone: string;
+  supportPhone: string;
 }
 export interface OrganizationDTO {
   name: string;
@@ -40,7 +40,7 @@ export interface OrganizationDTO {
   managerWorkPhone: string;
   managerEmail: string;
   supportEmail: string;
-  supprotPhone: string;
+  supportPhone: string;
   id: string;
 }
 
