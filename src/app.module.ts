@@ -12,6 +12,10 @@ import {Contract, ContractSchema} from './schemas/contract.schema'
 import { MapState, MapStateSchema } from './schemas/mapState.schema';
 import { MapStateService } from './services/mapState.service';
 import { MapStateController } from './controllers/MapState.controller';
+import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './users/users.module';
+import { AuthController } from './controllers/auth.controller';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
@@ -19,9 +23,13 @@ import { MapStateController } from './controllers/MapState.controller';
     MongooseModule.forFeature([{ name: Organization.name, schema: OrganizationSchema }]), 
     MongooseModule.forFeature([{ name: Order.name, schema: OrderSchema }]),
     MongooseModule.forFeature([{ name: Contract.name, schema: ContractSchema }]),
-    MongooseModule.forFeature([{ name: MapState.name, schema: MapStateSchema }])
+    MongooseModule.forFeature([{ name: MapState.name, schema: MapStateSchema }]),
+    AuthModule,
+    UsersModule,
+    ConfigModule.forRoot()
   ],
-  controllers: [OrganizationController, OrderController, ContractController, MapStateController],
+  controllers: [OrganizationController, OrderController, ContractController, MapStateController, AuthController],
   providers: [OrganizationService, OrderService, ContractService, MapStateService],
+
 })
 export class AppModule { }
