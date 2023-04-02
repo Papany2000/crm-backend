@@ -12,6 +12,11 @@ export class OrderService {
     return createdOrder.save();
   }
 
+  async createBulk( items: OrderDTO[]): Promise<OrderDTO[]> {
+    const createdItems = await this.orderModel.create(items);
+    return createdItems;
+  }
+
   async findAll(param): Promise<Order[]> {
     return this.orderModel.find(param);
   }

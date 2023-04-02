@@ -1,7 +1,7 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    project: './nest-learn/tsconfig.json',
+    project: './tsconfig.json',
     sourceType: 'module',
   },
   plugins: ['@typescript-eslint/eslint-plugin'],
