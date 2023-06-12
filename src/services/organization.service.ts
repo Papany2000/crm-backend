@@ -12,6 +12,11 @@ export class OrganizationService {
     return createdOrganization.save();
   }
 
+  async createBulk( items: OrganizationDTO[]): Promise<OrganizationDTO[]> {
+    const createdItems = await this.organizationModel.create(items);
+    return createdItems;
+  }
+
   async findAll(param): Promise<Organization[]> {
    // const limit = Number(param.limit || 10);
    // const offset = (Number(param.page || 1)-1)*limit;

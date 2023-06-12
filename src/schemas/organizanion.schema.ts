@@ -31,6 +31,9 @@ export class Organization {
 
   @Prop()
   supportPhone: string;
+
+  @Prop()
+  id: string;
 }
 export interface OrganizationDTO {
   name: string;

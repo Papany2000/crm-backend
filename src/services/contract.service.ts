@@ -12,6 +12,12 @@ export class ContractService {
     return createdContract.save();
   }
 
+  async createBulk( items: ContractDTO[]): Promise<ContractDTO[]> {
+    console.log(items)
+    const createdItems = await this.contractModel.create(items);
+    return createdItems;
+  }
+
   async findAll(param): Promise<Contract[]> {
     return this.contractModel.find(param);
   }

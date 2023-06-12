@@ -17,6 +17,8 @@ import { UsersModule } from './users/users.module';
 import { AuthController } from './controllers/auth.controller';
 import { ConfigModule } from '@nestjs/config';
 import {ExcelParserController} from './controllers/exselController'
+import {ExcelParserContractController} from './controllers/exselContractController'
+import {ExcelParserOrganizationController} from './controllers/exselCompanyController'
 
 @Module({
   imports: [
@@ -29,7 +31,7 @@ import {ExcelParserController} from './controllers/exselController'
     UsersModule,
     ConfigModule.forRoot()
   ],
-  controllers: [OrganizationController, OrderController, ContractController, MapStateController, AuthController, ExcelParserController ],
+  controllers: [OrganizationController, OrderController, ContractController, MapStateController, AuthController, ExcelParserController, ExcelParserContractController, ExcelParserOrganizationController ],
   providers: [OrganizationService, OrderService, ContractService, MapStateService],
 
 })
